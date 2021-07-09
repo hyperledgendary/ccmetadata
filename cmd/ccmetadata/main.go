@@ -8,6 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/hyperledger/fabric-sdk-go/pkg/common/logging"
 	"github.com/hyperledger/fabric-sdk-go/pkg/core/config"
 	"github.com/hyperledger/fabric-sdk-go/pkg/gateway"
 )
@@ -55,6 +56,8 @@ func main() {
 		fmt.Printf("Channel name: %s\n", *channelName)
 		fmt.Printf("As localhost option: %t\n", *aslocalhost)
 		fmt.Printf("Chaincode name: %s\n", chaincodeName)
+	} else {
+		logging.SetLevel("fabsdk", logging.ERROR)
 	}
 
 	if *aslocalhost {
