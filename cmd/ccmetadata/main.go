@@ -57,7 +57,7 @@ func main() {
 		fmt.Printf("As localhost option: %t\n", *aslocalhost)
 		fmt.Printf("Chaincode name: %s\n", chaincodeName)
 	} else {
-		logging.SetLevel("fabsdk", logging.ERROR)
+		logging.SetLevel("", logging.ERROR)
 	}
 
 	if *aslocalhost {
