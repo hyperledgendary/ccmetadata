@@ -8,13 +8,14 @@ import (
 
 func main() {
 	flag.Usage = func() {
-		fmt.Printf("Usage: ccmetadata -cert=<path> -key=<path> -channel=<name> <chaincode>\n\nGet metadata for the specified chaincode name\n\n")
+		fmt.Printf("Usage: ccmetadata -cert=<path> -key=<path> -channel=<name> [-aslocalhost] <chaincode>\n\nGet metadata for the specified chaincode name\n\n")
 		flag.PrintDefaults()
 	}
 
 	cert := flag.String("cert", "", "certificate file")
 	key := flag.String("key", "", "private key file")
 	channel := flag.String("channel", "", "channel name")
+	aslocalhost := flag.Bool("aslocalhost", false, "use discovery service as localhost")
 
 	flag.Parse()
 
@@ -30,5 +31,6 @@ func main() {
 	fmt.Printf("Certificate file: %s\n", *cert)
 	fmt.Printf("Private key file: %s\n", *key)
 	fmt.Printf("Channel name: %s\n", *channel)
+	fmt.Printf("As localhost option: %t\n", *aslocalhost)
 	fmt.Printf("Chaincode name: %s\n", chaincode)
 }
