@@ -57,6 +57,13 @@ func main() {
 		fmt.Printf("Chaincode name: %s\n", chaincodeName)
 	}
 
+	if *aslocalhost {
+		err := os.Setenv("DISCOVERY_AS_LOCALHOST", "true")
+		if err != nil {
+			log.Fatalf("Failed to set DISCOVERY_AS_LOCALHOST environment variable: %v", err)
+		}
+	}
+
 	wallet, err := createWallet(*certPath, *keyPath, *mspid)
 	if err != nil {
 		log.Fatalf("Failed to get credentials: %v", err)
