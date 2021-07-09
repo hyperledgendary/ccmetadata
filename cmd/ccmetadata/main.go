@@ -7,9 +7,14 @@ import (
 )
 
 func main() {
+	flag.Usage = func() {
+		fmt.Printf("Usage: ccmetadata -cert=<path> -key=<path> -channel=<name> <chaincode>\n\nGet metadata for the specified chaincode name\n\n")
+		flag.PrintDefaults()
+	}
+
 	cert := flag.String("cert", "", "certificate file")
 	key := flag.String("key", "", "private key file")
-	channel := flag.String("channel", "mychannel", "channel name")
+	channel := flag.String("channel", "", "channel name")
 
 	flag.Parse()
 
