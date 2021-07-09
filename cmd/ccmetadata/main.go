@@ -91,7 +91,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("Failed to evaluate transaction: %v", err)
 	}
-	log.Println(string(result))
+	fmt.Println(string(result))
 }
 
 func createWallet(certPath, keyPath, mspid string) (*gateway.Wallet, error) {
