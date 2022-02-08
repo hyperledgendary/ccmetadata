@@ -2,6 +2,21 @@
 
 Get Hyperledger Fabric chaincode metadata
 
+## Install
+
+Download the latest prebuilt binary for your system and place it in your PATH:
+
+- [ccmetadata-Darwin-x86_64.tgz](https://github.com/hyperledgendary/ccmetadata/releases/latest/download/ccmetadata-Darwin-x86_64.tgz)
+- [ccmetadata-Linux-x86_64.tgz](https://github.com/hyperledgendary/ccmetadata/releases/latest/download/ccmetadata-Linux-x86_64.tgz)
+
+Alternatively if there is not a suitable prebuilt binary, clone this repository and build it as follows:
+
+```
+go install ./...
+```
+
+## Usage
+
 ```
 Usage: ccmetadata -cert=<path> -key=<path> -mspid=<name> -connection=<path> -channel=<name> [-aslocalhost] [-verbose] <chaincode>
 
