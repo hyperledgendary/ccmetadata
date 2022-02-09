@@ -30,9 +30,15 @@ jobs:
       run: go test -v ./...
 
     - name: Package
-      run: tar -czvf ccmetadata-$(uname -s)-$(uname -m).tgz ccmetadata
+      run: |
+        tar -czvf ccmetadata-${RUNNER_OS}-${RUNNER_ARCH}.tgz ccmetadata
       if: matrix.os != 'windows-latest'
-      
+
+    - name: Package (Windows)
+      run: |
+        7z.exe a -ttar -so -an ccmetadata.exe | 7z.exe a -si ccmetadata-$Env:RUNNER_OS-$Env:RUNNER_ARCH.tgz
+      if: matrix.os == 'windows-latest'
+
     - name: Release
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
