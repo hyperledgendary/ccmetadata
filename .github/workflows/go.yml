@@ -36,7 +36,7 @@ jobs:
 
     - name: Package (Windows)
       run: |
-        tar -czvf ccmetadata-${RUNNER_OS}-${RUNNER_ARCH}.tgz ccmetadata.exe
+        tar -czvf ccmetadata-$Env:RUNNER_OS-$Env:RUNNER_ARCH.tgz ccmetadata.exe
       if: matrix.os == 'windows-latest'
 
     - name: Release
