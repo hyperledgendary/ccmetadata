@@ -28,7 +28,7 @@ Get metadata for the specified chaincode name
   -k, --key string
         private key file
   -m, --mspid string
-        private key file, e.g. Org1MSP
+        membership service provider name, e.g. Org1MSP
   -p, --connection string
         connection profile file
   -n, --channel string
