@@ -1,4 +1,4 @@
-module github.com/jt-nti/ccmetadata
+module github.com/hyperledgendary/ccmetadata
 
 go 1.14
 
